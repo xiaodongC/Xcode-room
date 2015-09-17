@@ -39,6 +39,7 @@ class ViewController: UIViewController {
     
     
     @IBAction func operate(sender: UIButton) {
+        let Pai = M_PI
         let operation = sender.currentTitle!
         if userIsInTheMiddleOfTypingANumber {
             enter()
@@ -49,9 +50,9 @@ class ViewController: UIViewController {
             case "+": performOperation {$0 + $1}
             case "−": performOperation {$1 - $0}
             case "√": performOperation {sqrt($0)}
-            case "sin": performOperation {sin($0)}
-            case "cos": performOperation {cos($0)}
-            case "tan": performOperation {tan($0)}
+            case "sin": performOperation {sin(Pai / 180 * $0)}
+            case "cos": performOperation {cos(Pai / 180 * $0)}
+            case "tan": performOperation {tan(Pai / 180 * $0)}
             
         default: break
         }
@@ -97,5 +98,7 @@ class ViewController: UIViewController {
         operandStack.removeAll(keepCapacity: true)
         return display.text = "0"
     }
+    
+    
 }
 
