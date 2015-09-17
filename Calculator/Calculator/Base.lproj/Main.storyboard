@@ -245,6 +245,9 @@
                                 <state key="normal" title="←">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="backSpace" destination="vXZ-lx-hvc" eventType="touchUpInside" id="2nX-Dn-IzP"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hd3-N1-GFm">
                                 <rect key="frame" x="304" y="301" width="64" height="64"/>

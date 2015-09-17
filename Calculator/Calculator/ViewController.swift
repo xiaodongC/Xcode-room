@@ -91,6 +91,12 @@ class ViewController: UIViewController {
         }
     }
     
+    @IBAction func backSpace() {
+        let bs = count(operandStack)
+        display.text! = dropLast( display.text!)
+           
+        
+    }
  
     @IBAction func clearall(sender: UIButton) {
         let clear = sender.currentTitle!
