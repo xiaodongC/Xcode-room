@@ -56,7 +56,7 @@ class ViewController: UIViewController {
             
         default: break
         }
-        
+        history.text = display.text!.lastPathComponent
                 
     }
     func performOperation(operation: (Double,Double) ->Double){
@@ -77,6 +77,7 @@ class ViewController: UIViewController {
     @IBAction func enter() {
         userIsInTheMiddleOfTypingANumber = false
         operandStack.append(displayValue)
+        display.text = operandStack.description + "=" + display.text!
         println("operandStack = \(operandStack)")
     }
     
@@ -94,8 +95,6 @@ class ViewController: UIViewController {
     @IBAction func backSpace() {
         let bs = count(operandStack)
         display.text! = dropLast( display.text!)
-           
-        
     }
  
     @IBAction func clearall(sender: UIButton) {
@@ -105,6 +104,11 @@ class ViewController: UIViewController {
         return display.text = "0"
     }
     
+    @IBAction func symbolChange() {
+        if userIsInTheMiddleOfTypingANumber{
+            display.text = "-" + display.text!
+        }
+    }
     
 }
 
